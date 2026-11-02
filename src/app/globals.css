@@ -1,26 +1,76 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ------------------------------------------------------------------
+ * Design tokens
+ * Dark, warm palette. Cream ink on near-black, gold as the only accent.
+ * ember/violet are reserved for the contact glow.
+ * ------------------------------------------------------------------ */
+@theme {
+  --color-bg: #0b0a09;
+  --color-surface: #15120f;
+  --color-surface-2: #1e1a16;
+  --color-line: #2b2620;
+
+  --color-ink: #ede4d3;
+  --color-ink-muted: #8c8376;
+  --color-ink-faint: #544d44;
+
+  --color-gold: #c9a96e;
+  --color-gold-soft: #8a7550;
+  --color-ember: #e8622c;
+  --color-violet: #6b4bd6;
+
+  /* Fluid display scale (mobile -> desktop) */
+  --text-display-xl: clamp(3.25rem, 11vw, 11rem);
+  --text-display-xl--line-height: 0.9;
+  --text-display-xl--letter-spacing: -0.04em;
+
+  --text-display-lg: clamp(2.5rem, 7.5vw, 7.5rem);
+  --text-display-lg--line-height: 0.92;
+  --text-display-lg--letter-spacing: -0.035em;
+
+  --text-display-md: clamp(2rem, 4.5vw, 4.5rem);
+  --text-display-md--line-height: 0.95;
+  --text-display-md--letter-spacing: -0.03em;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
 }
 
+/* Font vars come from next/font on <html>, so resolve them inline */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-be-vietnam), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Big uppercase heading style used across every section */
+@utility font-heading {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-stretch: 87.5%;
+  text-transform: uppercase;
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  body {
+    @apply bg-bg font-sans text-ink antialiased;
+  }
+
+  ::selection {
+    background-color: var(--color-gold);
+    color: var(--color-bg);
+  }
+
+  /*
+   * Uppercase Vietnamese stacks diacritics above the cap height (Ồ, Ấ, Ữ).
+   * The tight English line-height clips them, so loosen it for vi.
+   */
+  :lang(vi) .font-heading {
+    line-height: 1.05;
+  }
 }
