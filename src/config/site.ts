@@ -5,8 +5,7 @@ export const siteConfig = {
   description:
     "Frontend developer building web & mobile products with React, Next.js, React Native and WordPress.",
   url: "https://phjn.vercel.app",
-  // TODO: fill in contact email before the Contact section (day 16)
-  email: "",
+  email: "buihoangphi2003@gmail.com",
   location: "Ho Chi Minh City, Vietnam",
   links: {
     github: "https://github.com/PhjnX",
