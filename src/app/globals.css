@@ -50,6 +50,8 @@
   font-weight: 800;
   font-stretch: 87.5%;
   text-transform: uppercase;
+  /* Tight tracking + semi-condensed width shrinks the space glyph; give words air */
+  word-spacing: 0.12em;
 }
 
 @layer base {
@@ -67,10 +69,14 @@
   }
 
   /*
-   * Uppercase Vietnamese stacks diacritics above the cap height (Ồ, Ấ, Ữ).
-   * The tight English line-height clips them, so loosen it for vi.
+   * Uppercase Vietnamese stacks diacritics above the cap height (Ẩ, Ề, Ỷ) and
+   * dots below the baseline (Ặ, Ộ), so lines collide at the English leading.
+   * Override the theme tokens instead of adding a rule on .font-heading:
+   * a base-layer rule would lose to the text-display-* utilities.
    */
-  :lang(vi) .font-heading {
-    line-height: 1.05;
+  :root:lang(vi) {
+    --text-display-xl--line-height: 1.12;
+    --text-display-lg--line-height: 1.14;
+    --text-display-md--line-height: 1.16;
   }
 }
