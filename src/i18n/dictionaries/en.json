@@ -1,0 +1,62 @@
+{
+  "meta": {
+    "role": "Frontend Developer",
+    "description": "Bùi Hoàng Phi — frontend developer building web and mobile products with React, Next.js, React Native and WordPress."
+  },
+  "common": {
+    "language": "Language",
+    "scrollToExplore": "Scroll to explore"
+  },
+  "nav": {
+    "about": "About",
+    "work": "Work",
+    "experience": "Experience",
+    "services": "Services",
+    "credentials": "Credentials",
+    "contact": "Contact"
+  },
+  "hero": {
+    "eyebrow": "Frontend Developer · Web & Mobile",
+    "tagline": "I build web and mobile interfaces that ship and get used — from WooCommerce stores to React Native apps."
+  },
+  "about": {
+    "label": "About",
+    "titleLead": "Clean code,",
+    "titleTrail": "intentional interfaces."
+  },
+  "work": {
+    "label": "Work",
+    "titleLead": "Selected",
+    "titleTrail": "work."
+  },
+  "experience": {
+    "label": "Experience",
+    "titleLead": "Every chapter,",
+    "titleTrail": "one craft."
+  },
+  "stack": {
+    "label": "Tech stack",
+    "titleLead": "Tech",
+    "titleTrail": "stack."
+  },
+  "stats": {
+    "label": "Numbers",
+    "titleLead": "By the",
+    "titleTrail": "numbers."
+  },
+  "credentials": {
+    "label": "Credentials",
+    "titleLead": "Built on",
+    "titleTrail": "solid ground."
+  },
+  "services": {
+    "label": "Services",
+    "titleLead": "From idea",
+    "titleTrail": "to production."
+  },
+  "contact": {
+    "label": "Contact",
+    "titleLead": "Let's build something",
+    "titleTrail": "worth remembering."
+  }
+}

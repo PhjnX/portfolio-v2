@@ -1,0 +1,62 @@
+{
+  "meta": {
+    "role": "Lập trình viên Frontend",
+    "description": "Bùi Hoàng Phi — lập trình viên frontend xây dựng sản phẩm web và mobile với React, Next.js, React Native và WordPress."
+  },
+  "common": {
+    "language": "Ngôn ngữ",
+    "scrollToExplore": "Cuộn để khám phá"
+  },
+  "nav": {
+    "about": "Giới thiệu",
+    "work": "Dự án",
+    "experience": "Kinh nghiệm",
+    "services": "Dịch vụ",
+    "credentials": "Chứng chỉ",
+    "contact": "Liên hệ"
+  },
+  "hero": {
+    "eyebrow": "Frontend Developer · Web & Mobile",
+    "tagline": "Mình xây giao diện web và mobile chạy thật, dùng thật — từ shop WooCommerce đến app React Native."
+  },
+  "about": {
+    "label": "Giới thiệu",
+    "titleLead": "Code gọn gàng,",
+    "titleTrail": "giao diện có chủ đích."
+  },
+  "work": {
+    "label": "Dự án",
+    "titleLead": "Dự án",
+    "titleTrail": "chọn lọc."
+  },
+  "experience": {
+    "label": "Kinh nghiệm",
+    "titleLead": "Từng chặng,",
+    "titleTrail": "một nghề."
+  },
+  "stack": {
+    "label": "Công nghệ",
+    "titleLead": "Tech",
+    "titleTrail": "stack."
+  },
+  "stats": {
+    "label": "Con số",
+    "titleLead": "Những",
+    "titleTrail": "con số."
+  },
+  "credentials": {
+    "label": "Chứng chỉ",
+    "titleLead": "Nền tảng",
+    "titleTrail": "vững chắc."
+  },
+  "services": {
+    "label": "Dịch vụ",
+    "titleLead": "Từ ý tưởng",
+    "titleTrail": "đến sản phẩm."
+  },
+  "contact": {
+    "label": "Liên hệ",
+    "titleLead": "Cùng làm gì đó",
+    "titleTrail": "đáng nhớ nhé."
+  }
+}
