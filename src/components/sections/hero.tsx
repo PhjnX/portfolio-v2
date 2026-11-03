@@ -1,3 +1,4 @@
+import { RevealText } from "@/components/motion/reveal-text";
 import { Container } from "@/components/ui/container";
 import { siteConfig } from "@/config/site";
 import type { Dictionary } from "@/i18n/get-dictionary";
@@ -7,27 +8,36 @@ type HeroProps = {
   scrollLabel: string;
 };
 
-// TODO(day 5-6): split-letter name animation + 3D portrait
+// TODO(day 7): portrait once the photo is ready
 export function Hero({ copy, scrollLabel }: HeroProps) {
   const [first, ...rest] = siteConfig.name.split(" ");
   const last = rest.pop();
 
   return (
-    <section id="top" className="flex min-h-svh items-end pb-16">
+    <section id="top" className="flex min-h-svh items-end pt-24 pb-16">
       <Container className="space-y-8">
-        <p className="font-mono text-xs tracking-[0.2em] text-ink-muted uppercase">
+        <RevealText
+          trigger="load"
+          className="font-mono text-xs tracking-[0.2em] text-ink-muted uppercase"
+        >
           {copy.eyebrow}
-        </p>
-        <h1 className="font-heading text-display-xl">
+        </RevealText>
+        <RevealText as="h1" split="chars" trigger="load" className="font-heading text-display-xl">
           {first} {rest.join(" ")}
           <br />
           <span className="text-gold">{last}</span>
-        </h1>
+        </RevealText>
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-          <p className="max-w-md text-ink-muted">{copy.tagline}</p>
-          <p className="font-mono text-xs tracking-[0.2em] text-ink-faint uppercase">
+          <RevealText trigger="load" delay={0.6} className="max-w-md text-ink-muted">
+            {copy.tagline}
+          </RevealText>
+          <RevealText
+            trigger="load"
+            delay={0.8}
+            className="font-mono text-xs tracking-[0.2em] text-ink-faint uppercase"
+          >
             {scrollLabel} ↓
-          </p>
+          </RevealText>
         </div>
       </Container>
     </section>
