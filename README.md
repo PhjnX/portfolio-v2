@@ -8,7 +8,7 @@ Editorial, dark, scroll-driven. Bilingual (Tiếng Việt / English).
 
 - [Next.js](https://nextjs.org) (App Router) + TypeScript
 - Tailwind CSS v4 (design tokens in `src/app/globals.css`)
-- GSAP ScrollTrigger + Lenis for scroll animation _(planned)_
+- GSAP (ScrollTrigger, SplitText) + Lenis for scroll animation
 - i18n with Next.js built-ins: `[lang]` root segment, JSON dictionaries, `proxy.ts` locale detection
 - Deployed on Vercel
 
@@ -50,8 +50,8 @@ src/
 - [x] Project setup, tooling, design tokens
 - [x] i18n (vi / en)
 - [x] Section scaffolding
-- [ ] Smooth scroll + GSAP setup
-- [ ] Header + Hero
+- [x] Smooth scroll + GSAP setup
+- [x] Header + Hero
 - [ ] About
 - [ ] Selected Work (card stack)
 - [ ] Marquee
