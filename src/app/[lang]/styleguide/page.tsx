@@ -1,7 +1,14 @@
+import type { Metadata } from "next";
+
 import { Container } from "@/components/ui/container";
 import { SectionLabel } from "@/components/ui/section-label";
 
-// Temporary page to check tokens + Vietnamese rendering. Replaced by Hero on day 5.
+// Internal page to check tokens + Vietnamese rendering. Not linked from the site.
+export const metadata: Metadata = {
+  title: "Styleguide",
+  robots: { index: false, follow: false },
+};
+
 const swatches = [
   { name: "bg", className: "bg-bg" },
   { name: "surface", className: "bg-surface" },
@@ -14,7 +21,7 @@ const swatches = [
   { name: "violet", className: "bg-violet" },
 ];
 
-export default function Home() {
+export default function StyleguidePage() {
   return (
     <main className="py-24">
       <Container className="space-y-24">

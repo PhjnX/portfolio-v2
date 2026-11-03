@@ -1,9 +1,6 @@
 export const siteConfig = {
   name: "Bùi Hoàng Phi",
   shortName: "Phi",
-  role: "Frontend Developer",
-  description:
-    "Frontend developer building web & mobile products with React, Next.js, React Native and WordPress.",
   url: "https://phjn.vercel.app",
   email: "buihoangphi2003@gmail.com",
   location: "Ho Chi Minh City, Vietnam",
