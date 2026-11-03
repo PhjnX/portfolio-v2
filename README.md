@@ -9,7 +9,7 @@ Editorial, dark, scroll-driven. Bilingual (Tiếng Việt / English).
 - [Next.js](https://nextjs.org) (App Router) + TypeScript
 - Tailwind CSS v4 (design tokens in `src/app/globals.css`)
 - GSAP ScrollTrigger + Lenis for scroll animation _(planned)_
-- next-intl for i18n _(planned)_
+- i18n with Next.js built-ins: `[lang]` root segment, JSON dictionaries, `proxy.ts` locale detection
 - Deployed on Vercel
 
 ## Getting started
@@ -34,18 +34,22 @@ Open http://localhost:3000.
 
 ```
 src/
-  app/            routes, layout, global styles + tokens
+  app/[lang]/     routes + root layout (one per locale)
+  app/            global styles + tokens
   components/
     ui/           small reusable primitives (Container, SectionLabel...)
     sections/     page sections (Hero, About, Work...)
   config/         site-wide config (name, links)
+  i18n/           locales, dictionaries (vi.json is the source of truth)
   lib/            helpers (cn, fonts)
+  proxy.ts        redirects / to /vi or /en (cookie > Accept-Language)
 ```
 
 ## Roadmap
 
 - [x] Project setup, tooling, design tokens
-- [ ] i18n (vi / en)
+- [x] i18n (vi / en)
+- [x] Section scaffolding
 - [ ] Smooth scroll + GSAP setup
 - [ ] Header + Hero
 - [ ] About
