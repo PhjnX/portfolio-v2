@@ -80,3 +80,25 @@
     --text-display-md--line-height: 1.16;
   }
 }
+
+/* ------------------------------------------------------------------
+ * Text reveal (useTextReveal)
+ * ------------------------------------------------------------------ */
+
+/* Hidden until SplitText has wrapped it, so the unsplit text never flashes.
+ * Reduced motion skips the animation, so never hide there. <noscript> in the
+ * root layout undoes this when JS is off. */
+@media (prefers-reduced-motion: no-preference) {
+  [data-reveal] {
+    visibility: hidden;
+  }
+}
+
+/* Masks clip at the line box, which is shorter than stacked diacritics and the
+ * tight English leading. Pad the clip area, then cancel the extra space.
+ * Top gets more room: double marks like Ề, Ẩ, Ỗ stack well above the cap height. */
+.reveal-line-mask,
+.reveal-char-mask {
+  padding-block: 0.4em 0.2em;
+  margin-block: -0.4em -0.2em;
+}

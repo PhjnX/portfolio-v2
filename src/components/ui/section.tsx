@@ -1,3 +1,4 @@
+import { RevealText } from "@/components/motion/reveal-text";
 import { cn } from "@/lib/utils";
 
 import { Container } from "./container";
@@ -32,9 +33,9 @@ export function Section({ id, index, copy, className, children }: SectionProps) 
     >
       <Container className="space-y-8">
         <SectionLabel index={index} label={copy.label} />
-        <h2 id={headingId} className="font-heading text-display-lg">
+        <RevealText as="h2" id={headingId} className="font-heading text-display-lg">
           {copy.titleLead} <span className="text-ink-faint">{copy.titleTrail}</span>
-        </h2>
+        </RevealText>
         {children}
       </Container>
     </section>
