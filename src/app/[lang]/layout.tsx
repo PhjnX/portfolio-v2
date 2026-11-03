@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 
-import { LanguageSwitcher } from "@/components/ui/language-switcher";
+import { Header } from "@/components/layout/header";
+import { SmoothScroll } from "@/components/providers/smooth-scroll";
 import { siteConfig } from "@/config/site";
 import { locales } from "@/i18n/config";
 import { getDictionary, getLocale } from "@/i18n/get-dictionary";
@@ -47,12 +48,12 @@ export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
       className={cn(archivo.variable, beVietnam.variable, jetbrains.variable, "h-full")}
     >
       <body className="min-h-full" suppressHydrationWarning>
-        {/* Temporary placement — moves into the header on day 5 */}
-        <LanguageSwitcher
-          current={locale}
-          label={dict.common.language}
-          className="fixed top-5 right-5 z-50 md:right-10"
-        />
+        {/* Text reveals hide [data-reveal] until JS splits it; without JS, show it as is */}
+        <noscript>
+          <style>{"[data-reveal]{visibility:visible!important}"}</style>
+        </noscript>
+        <SmoothScroll />
+        <Header locale={locale} dict={dict} />
         {children}
       </body>
     </html>

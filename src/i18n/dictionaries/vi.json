@@ -5,6 +5,7 @@
   },
   "common": {
     "language": "Ngôn ngữ",
+    "mainNav": "Điều hướng chính",
     "scrollToExplore": "Cuộn để khám phá"
   },
   "nav": {

@@ -5,6 +5,7 @@
   },
   "common": {
     "language": "Language",
+    "mainNav": "Main navigation",
     "scrollToExplore": "Scroll to explore"
   },
   "nav": {
