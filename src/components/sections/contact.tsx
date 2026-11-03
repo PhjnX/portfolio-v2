@@ -5,7 +5,7 @@ type ContactProps = {
   copy: Dictionary["contact"];
 };
 
-// TODO(day 16): gradient glow + email CTA
+// TODO(day 6): gradient glow + email CTA
 export function Contact({ copy }: ContactProps) {
   return <Section id="contact" index="08" copy={copy} />;
 }

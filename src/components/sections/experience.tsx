@@ -5,7 +5,7 @@ type ExperienceProps = {
   copy: Dictionary["experience"];
 };
 
-// TODO(day 12-13): company cards that collect into a pile
+// TODO(day 4): company cards that collect into a pile
 export function Experience({ copy }: ExperienceProps) {
   return <Section id="experience" index="03" copy={copy} />;
 }

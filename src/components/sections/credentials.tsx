@@ -5,7 +5,7 @@ type CredentialsProps = {
   copy: Dictionary["credentials"];
 };
 
-// TODO(day 15): scattered certificate cards
+// TODO(day 6): scattered certificate cards
 export function Credentials({ copy }: CredentialsProps) {
   return <Section id="credentials" index="06" copy={copy} />;
 }

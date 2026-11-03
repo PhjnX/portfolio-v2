@@ -5,7 +5,7 @@ type ServicesProps = {
   copy: Dictionary["services"];
 };
 
-// TODO(day 16): accordion: web / mobile / wordpress
+// TODO(day 6): accordion: web / mobile / wordpress
 export function Services({ copy }: ServicesProps) {
   return <Section id="services" index="07" copy={copy} />;
 }

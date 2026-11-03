@@ -5,7 +5,7 @@ type WorkProps = {
   copy: Dictionary["work"];
 };
 
-// TODO(day 8-10): scattered letters + project card stack
+// TODO(day 5): scattered letters + project card stack
 export function Work({ copy }: WorkProps) {
   return <Section id="work" index="02" copy={copy} />;
 }

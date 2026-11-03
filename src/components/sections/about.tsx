@@ -5,7 +5,7 @@ type AboutProps = {
   copy: Dictionary["about"];
 };
 
-// TODO(day 7): scroll-revealed heading + short bio
+// TODO(day 4): short bio (heading reveal is already in Section)
 export function About({ copy }: AboutProps) {
   return <Section id="about" index="01" copy={copy} />;
 }

@@ -5,7 +5,7 @@ type StackProps = {
   copy: Dictionary["stack"];
 };
 
-// TODO(day 14): grouped tech list
+// TODO(day 6): grouped tech list
 export function Stack({ copy }: StackProps) {
   return <Section id="stack" index="04" copy={copy} />;
 }
