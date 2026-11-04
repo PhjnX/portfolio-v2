@@ -23,7 +23,27 @@
   "about": {
     "label": "About",
     "titleLead": "Clean code,",
-    "titleTrail": "intentional interfaces."
+    "titleTrail": "intentional interfaces.",
+    "bio": "I am Phi — a front-end developer with about a year of shipping real products: React and Next.js web apps, a React Native app on Google Play, and WooCommerce stores for clients in Germany.",
+    "more": "I like interfaces that are clean, fast, and where every motion has a reason. Beyond React, I am comfortable with PHP for WordPress/Elementor customisation and with wiring REST and WebSocket APIs alongside the back-end team.",
+    "facts": [
+      {
+        "label": "Based in",
+        "value": "Ho Chi Minh City"
+      },
+      {
+        "label": "Education",
+        "value": "Van Lang University — Software Engineering"
+      },
+      {
+        "label": "Languages",
+        "value": "Vietnamese, English (TOEIC 615)"
+      },
+      {
+        "label": "Status",
+        "value": "Open to front-end roles"
+      }
+    ]
   },
   "work": {
     "label": "Work",
@@ -33,7 +53,43 @@
   "experience": {
     "label": "Experience",
     "titleLead": "Every chapter,",
-    "titleTrail": "one craft."
+    "titleTrail": "one craft.",
+    "items": [
+      {
+        "kind": "Work",
+        "org": "Webie Vietnam",
+        "role": "Front-end Developer",
+        "period": "12/2025 – 10/2026",
+        "points": [
+          "Built the EMS web app and admin panel with React, Vite and Redux Toolkit; lazy loading, code splitting and Puppeteer prerendering for SEO.",
+          "Built the whole EMS Mobile UI alone (React Native/Expo): QR e-tickets, QR scanning, Google sign-in; shipped through Google Play closed testing.",
+          "Built B2B/B2C flows for German WooCommerce stores and WordPress/Elementor sites, with custom PHP and regular Lighthouse audits."
+        ],
+        "tags": ["React", "React Native", "Redux Toolkit", "WooCommerce", "PHP"]
+      },
+      {
+        "kind": "Course",
+        "org": "Cybersoft Academy",
+        "role": "Front-end Development",
+        "period": "09/2024 – 05/2025",
+        "points": [
+          "Learned HTML/CSS, JavaScript, React and Redux through hands-on projects.",
+          "Got used to team workflows with Git and code review."
+        ],
+        "tags": ["JavaScript", "React", "Redux", "Git"]
+      },
+      {
+        "kind": "Education",
+        "org": "Van Lang University",
+        "role": "Bachelor of IT — Software Engineering",
+        "period": "2021 – 2025",
+        "points": [
+          "Graduated with a GPA of 3.16/4.0.",
+          "Foundations in data structures, databases and the software development process."
+        ],
+        "tags": ["GPA 3.16"]
+      }
+    ]
   },
   "stack": {
     "label": "Tech stack",
@@ -59,5 +115,8 @@
     "label": "Contact",
     "titleLead": "Let's build something",
     "titleTrail": "worth remembering."
+  },
+  "marquee": {
+    "items": ["Web interfaces", "Mobile apps", "WordPress", "WooCommerce", "Motion"]
   }
 }

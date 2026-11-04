@@ -23,7 +23,27 @@
   "about": {
     "label": "Giới thiệu",
     "titleLead": "Code gọn gàng,",
-    "titleTrail": "giao diện có chủ đích."
+    "titleTrail": "giao diện có chủ đích.",
+    "bio": "Mình là Phi — lập trình viên Front-end với khoảng một năm làm sản phẩm thật: web app React và Next.js, một app React Native lên Google Play, và những shop WooCommerce cho khách hàng ở Đức.",
+    "more": "Mình thích giao diện gọn, chạy nhanh, và chuyển động nào cũng có lý do. Ngoài React, mình dùng tốt PHP để tuỳ biến WordPress/Elementor và tích hợp REST, WebSocket cùng team backend.",
+    "facts": [
+      {
+        "label": "Nơi sống",
+        "value": "TP. Hồ Chí Minh"
+      },
+      {
+        "label": "Học vấn",
+        "value": "Đại học Văn Lang — Công nghệ phần mềm"
+      },
+      {
+        "label": "Ngôn ngữ",
+        "value": "Tiếng Việt, Tiếng Anh (TOEIC 615)"
+      },
+      {
+        "label": "Trạng thái",
+        "value": "Đang tìm vị trí Front-end"
+      }
+    ]
   },
   "work": {
     "label": "Dự án",
@@ -33,7 +53,43 @@
   "experience": {
     "label": "Kinh nghiệm",
     "titleLead": "Từng chặng,",
-    "titleTrail": "một nghề."
+    "titleTrail": "một nghề.",
+    "items": [
+      {
+        "kind": "Công việc",
+        "org": "Webie Vietnam",
+        "role": "Lập trình viên Front-end",
+        "period": "12/2025 – 10/2026",
+        "points": [
+          "Xây web app EMS và trang quản trị bằng React, Vite, Redux Toolkit; lazy loading, code splitting và prerender bằng Puppeteer cho SEO.",
+          "Một mình làm toàn bộ UI app EMS Mobile (React Native/Expo): vé QR, quét QR, đăng nhập Google; phát hành closed testing trên Google Play.",
+          "Làm luồng B2B/B2C cho shop WooCommerce ở Đức và website WordPress/Elementor, viết PHP tuỳ chỉnh, audit Lighthouse định kỳ."
+        ],
+        "tags": ["React", "React Native", "Redux Toolkit", "WooCommerce", "PHP"]
+      },
+      {
+        "kind": "Khoá học",
+        "org": "Cybersoft Academy",
+        "role": "Lập trình Front-end",
+        "period": "09/2024 – 05/2025",
+        "points": [
+          "Học bài bản HTML/CSS, JavaScript, React và Redux qua các dự án thực hành.",
+          "Làm quen quy trình làm việc nhóm với Git và review code."
+        ],
+        "tags": ["JavaScript", "React", "Redux", "Git"]
+      },
+      {
+        "kind": "Học vấn",
+        "org": "Đại học Văn Lang",
+        "role": "Cử nhân CNTT — Công nghệ phần mềm",
+        "period": "2021 – 2025",
+        "points": [
+          "Tốt nghiệp với GPA 3.16/4.0.",
+          "Nền tảng về cấu trúc dữ liệu, cơ sở dữ liệu và quy trình phát triển phần mềm."
+        ],
+        "tags": ["GPA 3.16"]
+      }
+    ]
   },
   "stack": {
     "label": "Công nghệ",
@@ -59,5 +115,8 @@
     "label": "Liên hệ",
     "titleLead": "Cùng làm gì đó",
     "titleTrail": "đáng nhớ nhé."
+  },
+  "marquee": {
+    "items": ["Giao diện web", "Ứng dụng mobile", "WordPress", "WooCommerce", "Chuyển động"]
   }
 }
