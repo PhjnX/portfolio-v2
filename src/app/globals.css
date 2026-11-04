@@ -54,6 +54,12 @@
   word-spacing: 0.12em;
 }
 
+/* Hollow display text (marquee), drawn in the faint ink */
+@utility text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1px var(--color-ink-muted);
+}
+
 @layer base {
   html {
     color-scheme: dark;
