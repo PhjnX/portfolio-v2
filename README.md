@@ -52,10 +52,10 @@ src/
 - [x] Section scaffolding
 - [x] Smooth scroll + GSAP setup
 - [x] Header + Hero
-- [ ] About
+- [x] About
 - [ ] Selected Work (card stack)
-- [ ] Marquee
-- [ ] Experience
+- [x] Marquee
+- [x] Experience
 - [ ] Tech stack + Stats
 - [ ] Credentials
 - [ ] Services + Contact
