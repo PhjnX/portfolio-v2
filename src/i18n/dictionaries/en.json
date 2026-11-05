@@ -48,7 +48,39 @@
   "work": {
     "label": "Work",
     "titleLead": "Selected",
-    "titleTrail": "work."
+    "titleTrail": "work.",
+    "kinds": {
+      "client": "At Webie",
+      "personal": "Personal"
+    },
+    "links": {
+      "live": "Live site",
+      "source": "Source",
+      "demo": "Demo video",
+      "playground": "Live demo"
+    },
+    "projects": {
+      "webie-ems-web": {
+        "period": "12/2025 – 02/2026",
+        "summary": "Event management web app: a bilingual public site for events, registration and news, plus an admin panel with charts, Excel export, a news editor and maps."
+      },
+      "webie-ems-mobile": {
+        "period": "03/2026 – 06/2026",
+        "summary": "The mobile app for event guests and staff: QR e-tickets, QR scanning at the door, Google sign-in, and photo and news downloads."
+      },
+      "german-woocommerce": {
+        "period": "2026",
+        "summary": "IT42life and Reuschenbach: B2C and B2B shopping flows with business account approval, custom PHP logic and product content structured with custom fields."
+      },
+      "phjn-coffee": {
+        "period": "10/2026 – now",
+        "summary": "Ordering site for a fictional café: guests scan the QR code on their table to order, and the counter runs orders, menu and tables from an admin dashboard."
+      },
+      "vietqr-checkout": {
+        "period": "10/2026 – now",
+        "summary": "A WooCommerce payment gateway: it shows a VietQR code with the amount and order code pre-filled, and marks the order as paid when the SePay webhook reports the transfer."
+      }
+    }
   },
   "experience": {
     "label": "Experience",
