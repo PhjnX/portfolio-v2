@@ -57,19 +57,4 @@ export const projects: Project[] = [
       { kind: "source", href: "https://github.com/PhjnX/phjn-coffee" },
     ],
   },
-  {
-    slug: "vietqr-checkout",
-    title: "VietQR Checkout",
-    kind: "personal",
-    monogram: "VQR.",
-    accent: "#265e3e",
-    stack: ["PHP", "WooCommerce", "SePay webhook", "PHPUnit", "PHPStan"],
-    links: [
-      {
-        kind: "playground",
-        href: "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/PhjnX/vietqr-checkout/main/blueprint.json",
-      },
-      { kind: "source", href: "https://github.com/PhjnX/vietqr-checkout" },
-    ],
-  },
 ];

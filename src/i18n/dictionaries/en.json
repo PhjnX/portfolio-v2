@@ -56,8 +56,7 @@
     "links": {
       "live": "Live site",
       "source": "Source",
-      "demo": "Demo video",
-      "playground": "Live demo"
+      "demo": "Demo video"
     },
     "projects": {
       "webie-ems-web": {
@@ -71,10 +70,6 @@
       "phjn-coffee": {
         "period": "10/2026 – now",
         "summary": "Ordering site for a fictional café: guests scan the QR code on their table to order, and the counter runs orders, menu and tables from an admin dashboard."
-      },
-      "vietqr-checkout": {
-        "period": "10/2026 – now",
-        "summary": "A WooCommerce payment gateway: it shows a VietQR code with the amount and order code pre-filled, and marks the order as paid when the SePay webhook reports the transfer."
       }
     }
   },
