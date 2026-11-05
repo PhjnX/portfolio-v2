@@ -1,4 +1,5 @@
 import { RevealText } from "@/components/motion/reveal-text";
+import { ScatterText } from "@/components/motion/scatter-text";
 import { cn } from "@/lib/utils";
 
 import { Container } from "./container";
@@ -14,6 +15,8 @@ type SectionProps = {
   id: string;
   index: string;
   copy: SectionCopy;
+  /** "reveal" slides lines up (default); "scatter" flies letters in from all over. */
+  heading?: "reveal" | "scatter";
   className?: string;
   children?: React.ReactNode;
 };
@@ -22,8 +25,20 @@ type SectionProps = {
  * Shared shell for every content section: anchor id, "01 / Label",
  * and the two-tone heading (lead in ink, trail faded).
  */
-export function Section({ id, index, copy, className, children }: SectionProps) {
+export function Section({
+  id,
+  index,
+  copy,
+  heading = "reveal",
+  className,
+  children,
+}: SectionProps) {
   const headingId = `${id}-heading`;
+  const title = (
+    <>
+      {copy.titleLead} <span className="text-ink-faint">{copy.titleTrail}</span>
+    </>
+  );
 
   return (
     <section
@@ -33,9 +48,15 @@ export function Section({ id, index, copy, className, children }: SectionProps) 
     >
       <Container className="space-y-8">
         <SectionLabel index={index} label={copy.label} />
-        <RevealText as="h2" id={headingId} className="font-heading text-display-lg">
-          {copy.titleLead} <span className="text-ink-faint">{copy.titleTrail}</span>
-        </RevealText>
+        {heading === "scatter" ? (
+          <ScatterText id={headingId} className="font-heading text-display-lg">
+            {title}
+          </ScatterText>
+        ) : (
+          <RevealText as="h2" id={headingId} className="font-heading text-display-lg">
+            {title}
+          </RevealText>
+        )}
         {children}
       </Container>
     </section>
