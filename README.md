@@ -53,7 +53,7 @@ src/
 - [x] Smooth scroll + GSAP setup
 - [x] Header + Hero
 - [x] About
-- [ ] Selected Work (card stack)
+- [x] Selected Work (card stack)
 - [x] Marquee
 - [x] Experience
 - [ ] Tech stack + Stats
