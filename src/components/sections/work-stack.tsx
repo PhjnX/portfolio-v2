@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useRef } from "react";
 
 import { projects } from "@/config/projects";
@@ -105,20 +106,39 @@ export function WorkStack({ copy }: WorkStackProps) {
             <div
               data-cover
               aria-hidden
-              className="relative mx-auto flex aspect-4/3 w-full max-w-md flex-col justify-between overflow-hidden rounded-2xl p-6 shadow-2xl shadow-black/60 md:aspect-4/5 md:p-8"
+              className="relative mx-auto flex aspect-4/5 w-full max-w-sm flex-col justify-between overflow-hidden rounded-2xl p-6 shadow-2xl shadow-black/60 md:max-w-md md:p-8"
               style={{ backgroundColor: project.accent }}
             >
               {/* Soft light from the top left, so the flat colour reads as a printed sleeve */}
               <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_80%_at_0%_0%,rgb(255_255_255/0.18),transparent_60%)]" />
-              <p className="relative font-mono text-xs tracking-[0.2em] text-ink/70 uppercase">
-                {number}
-              </p>
-              <p className="relative font-heading text-[clamp(4rem,9vw,8rem)] leading-none text-ink">
-                {project.monogram}
-              </p>
-              <p className="relative font-mono text-xs tracking-[0.2em] text-ink/70 uppercase">
-                {project.title}
-              </p>
+              <div className="relative space-y-4">
+                <p className="flex justify-between gap-4 font-mono text-xs tracking-[0.2em] text-ink/70 uppercase">
+                  <span>{number}</span>
+                  <span className="truncate">{project.title}</span>
+                </p>
+                {project.image && (
+                  <p className="font-heading text-[clamp(3rem,6vw,5rem)] leading-none text-ink">
+                    {project.monogram}
+                  </p>
+                )}
+              </div>
+
+              {project.image ? (
+                // Screenshot as a window bleeding off the bottom-right corner
+                <div className="relative -mb-12 w-[135%] max-w-none overflow-hidden rounded-lg shadow-2xl ring-1 shadow-black/50 ring-white/15 md:-mb-16">
+                  <Image
+                    src={project.image}
+                    alt=""
+                    placeholder="blur"
+                    sizes="(min-width: 768px) 38rem, 120vw"
+                    className="h-auto w-full"
+                  />
+                </div>
+              ) : (
+                <p className="relative font-heading text-[clamp(4rem,9vw,8rem)] leading-none text-ink">
+                  {project.monogram}
+                </p>
+              )}
             </div>
 
             <article data-details className="space-y-6">

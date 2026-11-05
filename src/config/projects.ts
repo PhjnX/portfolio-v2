@@ -1,3 +1,7 @@
+import type { StaticImageData } from "next/image";
+
+import phjnCoffee from "@/assets/projects/phjn-coffee.jpg";
+import webieEmsWeb from "@/assets/projects/webie-ems-web.jpg";
 import type { Dictionary } from "@/i18n/get-dictionary";
 
 type WorkCopy = Dictionary["work"];
@@ -13,6 +17,8 @@ export type Project = {
   monogram: string;
   /** Card cover colour. Dark enough for cream ink on top. */
   accent: string;
+  /** Screenshot shown on the cover. Without one the cover is colour and monogram only. */
+  image?: StaticImageData;
   stack: string[];
   links: { kind: keyof WorkCopy["links"]; href: string }[];
 };
@@ -25,6 +31,7 @@ export const projects: Project[] = [
     kind: "client",
     monogram: "EMS.",
     accent: "#4a3699",
+    image: webieEmsWeb,
     stack: ["React", "TypeScript", "Vite", "Redux Toolkit", "Tailwind CSS"],
     links: [{ kind: "live", href: "https://ems.webie.com.vn/" }],
   },
@@ -43,6 +50,7 @@ export const projects: Project[] = [
     kind: "personal",
     monogram: "PC.",
     accent: "#5e3b22",
+    image: phjnCoffee,
     stack: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "Zustand", "Vitest"],
     links: [
       { kind: "live", href: "https://phjn-coffee.vercel.app" },
