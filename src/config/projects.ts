@@ -1,6 +1,7 @@
 import type { StaticImageData } from "next/image";
 
 import phjnCoffee from "@/assets/projects/phjn-coffee.jpg";
+import webieEmsMobile from "@/assets/projects/webie-ems-mobile.jpg";
 import webieEmsWeb from "@/assets/projects/webie-ems-web.jpg";
 import type { Dictionary } from "@/i18n/get-dictionary";
 
@@ -41,6 +42,7 @@ export const projects: Project[] = [
     kind: "client",
     monogram: "APP.",
     accent: "#1d5f66",
+    image: webieEmsMobile,
     stack: ["React Native", "Expo", "TypeScript", "Redux Toolkit", "EAS Build"],
     links: [{ kind: "demo", href: "https://youtu.be/Uz_h0ZTjmBU" }],
   },
