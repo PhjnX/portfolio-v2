@@ -68,10 +68,6 @@
         "period": "03/2026 – 06/2026",
         "summary": "App mobile cho khách và nhân sự sự kiện: vé điện tử QR, quét QR tại cổng, đăng nhập Google, tải ảnh và tin tức."
       },
-      "german-woocommerce": {
-        "period": "2026",
-        "summary": "IT42life và Reuschenbach: luồng mua hàng B2C và B2B có duyệt tài khoản doanh nghiệp, logic PHP tuỳ biến và nội dung sản phẩm có cấu trúc bằng custom field."
-      },
       "phjn-coffee": {
         "period": "10/2026 – nay",
         "summary": "Website gọi món cho một quán cà phê (giả lập): khách quét QR trên bàn để gọi món, quầy quản lý đơn, thực đơn và bàn qua trang admin."

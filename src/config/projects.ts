@@ -38,15 +38,6 @@ export const projects: Project[] = [
     links: [{ kind: "demo", href: "https://youtu.be/Uz_h0ZTjmBU" }],
   },
   {
-    slug: "german-woocommerce",
-    title: "German WooCommerce",
-    kind: "client",
-    monogram: "WC.",
-    accent: "#8f3a22",
-    stack: ["WordPress", "WooCommerce", "PHP", "WPCode", "ACF/SCF"],
-    links: [],
-  },
-  {
     slug: "phjn-coffee",
     title: "Phjn Coffee",
     kind: "personal",
