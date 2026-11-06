@@ -51,12 +51,13 @@ export function Section({
         {/* Entrance effects for everything below, declared with data-fx attributes */}
         <SectionFx>
           <SectionLabel index={index} label={copy.label} />
+          {/* pt on the heading: stacked Vietnamese marks (Ề, Ẩ) rise into the label otherwise */}
           {heading === "scatter" ? (
-            <ScatterText id={headingId} className="font-heading text-display-lg">
+            <ScatterText id={headingId} className="pt-[0.15em] font-heading text-display-lg">
               {title}
             </ScatterText>
           ) : (
-            <RevealText as="h2" id={headingId} className="font-heading text-display-lg">
+            <RevealText as="h2" id={headingId} className="pt-[0.15em] font-heading text-display-lg">
               {title}
             </RevealText>
           )}

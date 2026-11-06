@@ -15,7 +15,7 @@ export function About({ copy }: AboutProps) {
       id="about"
       index="01"
       copy={copy}
-      className="relative z-10 rounded-t-[2rem] bg-bg shadow-[0_-30px_60px_rgb(0_0_0/0.6)] md:rounded-t-[3rem]"
+      className="relative z-10 rounded-t-[2rem] bg-bg shadow-[0_-30px_60px_var(--shadow-sheet)] md:rounded-t-[3rem]"
     >
       <div className="grid gap-12 pt-8 md:grid-cols-12 md:gap-10 md:pt-16">
         <div className="space-y-8 md:col-span-8">

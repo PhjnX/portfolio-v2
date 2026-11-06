@@ -1,5 +1,6 @@
 import { Container } from "@/components/ui/container";
 import { LanguageSwitcher } from "@/components/ui/language-switcher";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { siteConfig } from "@/config/site";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/get-dictionary";
@@ -42,7 +43,10 @@ export function Header({ locale, dict }: HeaderProps) {
         </nav>
 
         <div className="flex items-center gap-6">
-          <LanguageSwitcher current={locale} label={dict.common.language} />
+          <div className="flex items-center gap-3">
+            <LanguageSwitcher current={locale} label={dict.common.language} />
+            <ThemeToggle labels={{ toLight: dict.common.toLight, toDark: dict.common.toDark }} />
+          </div>
           <MobileMenu
             items={items}
             labels={{ open: dict.common.menu, close: dict.common.close, nav: dict.common.mainNav }}

@@ -23,9 +23,11 @@ export function Hero({ copy, scrollLabel }: HeroProps) {
   const last = rest.pop();
 
   return (
-    <section id="top" className="sticky top-0 isolate h-svh min-h-[36rem] overflow-hidden">
+    <section id="top" className="sticky top-0 isolate h-svh min-h-[36rem] overflow-hidden bg-bg">
       <HeroMotion>
         {/* Illustrated portrait, faded into the page at the bottom (and left on desktop).
+            Light theme: a night scene fading into paper turns muddy, so it becomes a framed
+            dark panel below the header instead, with no fade (globals.css).
             Its own dark backdrop and warm light already match the palette: no filters. */}
         <div
           data-hero-portrait
@@ -59,7 +61,7 @@ export function Hero({ copy, scrollLabel }: HeroProps) {
             as="h1"
             split="chars"
             trigger="load"
-            className="font-heading text-display-xl drop-shadow-[0_4px_24px_rgb(0_0_0/0.5)]"
+            className="font-heading text-display-xl drop-shadow-[0_4px_24px_var(--shadow-text)]"
           >
             {first} {rest.join(" ")}
             <br />

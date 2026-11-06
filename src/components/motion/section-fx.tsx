@@ -86,7 +86,7 @@ function scramble(el: HTMLElement) {
 
 function rows(list: HTMLElement) {
   const items = Array.from(list.children) as HTMLElement[];
-  const tl = gsap.timeline({ scrollTrigger: once(list, "top 80%") });
+  const tl = gsap.timeline({ scrollTrigger: once(list, "top 90%") });
 
   items.forEach((row, i) => {
     const line = row.querySelector<HTMLElement>("[data-fx-line]");
