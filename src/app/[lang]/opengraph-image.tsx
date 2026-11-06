@@ -49,9 +49,9 @@ export default async function Image({ params }: { params: Promise<{ lang: string
       <img
         src={`data:image/jpeg;base64,${portrait}`}
         alt=""
-        width={630}
+        width={504}
         height={630}
-        style={{ position: "absolute", right: 0, top: 0, opacity: 0.5 }}
+        style={{ position: "absolute", right: 0, top: 0, opacity: 0.85 }}
       />
       {/* One gradient per layer, sized explicitly: Satori ignores `inset` and gradient lists */}
       <div
