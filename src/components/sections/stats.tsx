@@ -1,11 +1,16 @@
 import { Section } from "@/components/ui/section";
 import type { Dictionary } from "@/i18n/get-dictionary";
 
+import { StatsBoard } from "./stats-board";
+
 type StatsProps = {
   copy: Dictionary["stats"];
 };
 
-// TODO(day 6): count-up numbers with growing bars
 export function Stats({ copy }: StatsProps) {
-  return <Section id="stats" index="05" copy={copy} />;
+  return (
+    <Section id="stats" index="05" copy={copy}>
+      <StatsBoard items={copy.items} />
+    </Section>
+  );
 }
