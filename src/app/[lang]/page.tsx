@@ -14,7 +14,8 @@ export default async function HomePage() {
   const dict = await getDictionary();
 
   return (
-    <main>
+    // tabIndex: lets the skip link move focus here, not only scroll
+    <main id="main" tabIndex={-1} className="outline-none">
       {/* The hero sticks inside this wrapper only, so it un-pins once About has covered it */}
       <div>
         <Hero copy={dict.hero} scrollLabel={dict.common.scrollToExplore} />

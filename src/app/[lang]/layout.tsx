@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 
 import { Header } from "@/components/layout/header";
+import { SkipLink } from "@/components/layout/skip-link";
 import { SmoothScroll } from "@/components/providers/smooth-scroll";
 import { siteConfig } from "@/config/site";
 import { locales } from "@/i18n/config";
@@ -52,6 +53,7 @@ export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
         <noscript>
           <style>{"[data-reveal]{visibility:visible!important}"}</style>
         </noscript>
+        <SkipLink label={dict.common.skip} />
         <SmoothScroll />
         <Header locale={locale} dict={dict} />
         {children}

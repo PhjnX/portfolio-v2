@@ -33,7 +33,7 @@ export function HeaderShell({ className, children }: React.ComponentProps<"heade
       // Keep it reachable for keyboard users even while hidden
       onFocusCapture={() => ref.current?.setAttribute("data-hidden", "false")}
       className={cn(
-        "fixed inset-x-0 top-0 z-50 border-b border-transparent transition-[translate,background-color,border-color] duration-500 ease-out-expo",
+        "fixed inset-x-0 top-0 z-50 border-b border-transparent transition-[translate,background-color,border-color] duration-500 ease-out-expo motion-reduce:transition-none",
         "data-[hidden=true]:-translate-y-full",
         "data-[scrolled=true]:border-line/60 data-[scrolled=true]:bg-bg/75 data-[scrolled=true]:backdrop-blur-md",
         className,
