@@ -117,27 +117,96 @@
   "stack": {
     "label": "Công nghệ",
     "titleLead": "Tech",
-    "titleTrail": "stack."
+    "titleTrail": "stack.",
+    "groups": {
+      "frontend": "Front-end",
+      "mobile": "Mobile",
+      "wordpress": "WordPress",
+      "tools": "Công cụ"
+    }
   },
   "stats": {
     "label": "Con số",
     "titleLead": "Những",
-    "titleTrail": "con số."
+    "titleTrail": "con số.",
+    "items": [
+      {
+        "prefix": "~",
+        "value": 1,
+        "suffix": "",
+        "label": "năm làm sản phẩm thật ở Webie"
+      },
+      {
+        "prefix": "",
+        "value": 3,
+        "suffix": "",
+        "label": "sản phẩm đang chạy: web, mobile và một quán cà phê"
+      },
+      {
+        "prefix": "",
+        "value": 20,
+        "suffix": "",
+        "label": "tester dùng thử app trên Google Play"
+      }
+    ]
   },
   "credentials": {
     "label": "Chứng chỉ",
     "titleLead": "Nền tảng",
-    "titleTrail": "vững chắc."
+    "titleTrail": "vững chắc.",
+    "items": [
+      {
+        "issuer": "ETS",
+        "title": "TOEIC 615",
+        "detail": "Listening & Reading · 615 / 990 — đọc tốt tài liệu kỹ thuật tiếng Anh",
+        "year": ""
+      },
+      {
+        "issuer": "Đại học Văn Lang",
+        "title": "Cử nhân Công nghệ thông tin",
+        "detail": "Chuyên ngành Công nghệ phần mềm · GPA 3.16 / 4.0",
+        "year": "2025"
+      },
+      {
+        "issuer": "Cybersoft Academy",
+        "title": "Lập trình Front-end",
+        "detail": "Chứng nhận hoàn thành khoá học HTML/CSS, JavaScript, React",
+        "year": "2025"
+      }
+    ]
   },
   "services": {
     "label": "Dịch vụ",
     "titleLead": "Từ ý tưởng",
-    "titleTrail": "đến sản phẩm."
+    "titleTrail": "đến sản phẩm.",
+    "items": [
+      {
+        "title": "Web app",
+        "text": "Trang admin và trang public bằng React, Next.js: dashboard, form, biểu đồ, nội dung song ngữ, kết nối REST và WebSocket API.",
+        "stack": ["React", "Next.js", "TypeScript", "Redux Toolkit", "Tailwind CSS"]
+      },
+      {
+        "title": "Mobile app",
+        "text": "App React Native trên Expo, từ vé QR, quét mã đến đăng nhập Google, build bằng EAS và phát hành lên Google Play.",
+        "stack": ["React Native", "Expo", "EAS Build"]
+      },
+      {
+        "title": "WordPress & WooCommerce",
+        "text": "Shop và website doanh nghiệp: luồng B2B/B2C, custom field, PHP tuỳ biến, audit Lighthouse và Core Web Vitals định kỳ.",
+        "stack": ["WordPress", "WooCommerce", "Elementor", "PHP", "ACF"]
+      }
+    ]
   },
   "contact": {
     "label": "Liên hệ",
     "titleLead": "Cùng làm gì đó",
-    "titleTrail": "đáng nhớ nhé."
+    "titleTrail": "đáng nhớ nhé.",
+    "lead": "Mình đang tìm vị trí Front-end. Email là cách nhanh nhất để liên lạc, mình thường trả lời trong vòng một ngày.",
+    "copy": "Copy",
+    "copied": "Đã copy",
+    "cv": "Tải CV",
+    "cvHref": "/cv-vi.pdf",
+    "rights": "Thiết kế và code bởi"
   },
   "marquee": {
     "items": ["Giao diện web", "Ứng dụng mobile", "WordPress", "WooCommerce", "Chuyển động"]

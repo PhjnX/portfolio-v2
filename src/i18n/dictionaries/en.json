@@ -117,27 +117,96 @@
   "stack": {
     "label": "Tech stack",
     "titleLead": "Tech",
-    "titleTrail": "stack."
+    "titleTrail": "stack.",
+    "groups": {
+      "frontend": "Front-end",
+      "mobile": "Mobile",
+      "wordpress": "WordPress",
+      "tools": "Tools"
+    }
   },
   "stats": {
     "label": "Numbers",
     "titleLead": "By the",
-    "titleTrail": "numbers."
+    "titleTrail": "numbers.",
+    "items": [
+      {
+        "prefix": "~",
+        "value": 1,
+        "suffix": "",
+        "label": "year shipping real products at Webie"
+      },
+      {
+        "prefix": "",
+        "value": 3,
+        "suffix": "",
+        "label": "products live: web, mobile and a café"
+      },
+      {
+        "prefix": "",
+        "value": 20,
+        "suffix": "",
+        "label": "testers on the Google Play beta"
+      }
+    ]
   },
   "credentials": {
     "label": "Credentials",
     "titleLead": "Built on",
-    "titleTrail": "solid ground."
+    "titleTrail": "solid ground.",
+    "items": [
+      {
+        "issuer": "ETS",
+        "title": "TOEIC 615",
+        "detail": "Listening & Reading · 615 / 990 — comfortable with English technical docs",
+        "year": ""
+      },
+      {
+        "issuer": "Van Lang University",
+        "title": "Bachelor of Information Technology",
+        "detail": "Software Engineering · GPA 3.16 / 4.0",
+        "year": "2025"
+      },
+      {
+        "issuer": "Cybersoft Academy",
+        "title": "Front-end Development",
+        "detail": "Course completion: HTML/CSS, JavaScript, React",
+        "year": "2025"
+      }
+    ]
   },
   "services": {
     "label": "Services",
     "titleLead": "From idea",
-    "titleTrail": "to production."
+    "titleTrail": "to production.",
+    "items": [
+      {
+        "title": "Web apps",
+        "text": "Admin panels and public sites in React and Next.js: dashboards, forms, charts and bilingual content, wired to REST and WebSocket APIs.",
+        "stack": ["React", "Next.js", "TypeScript", "Redux Toolkit", "Tailwind CSS"]
+      },
+      {
+        "title": "Mobile apps",
+        "text": "React Native apps on Expo, from QR tickets and scanning to Google sign-in, built with EAS and shipped to Google Play.",
+        "stack": ["React Native", "Expo", "EAS Build"]
+      },
+      {
+        "title": "WordPress & WooCommerce",
+        "text": "Shops and company sites: B2B/B2C flows, custom fields, custom PHP, and regular Lighthouse and Core Web Vitals checks.",
+        "stack": ["WordPress", "WooCommerce", "Elementor", "PHP", "ACF"]
+      }
+    ]
   },
   "contact": {
     "label": "Contact",
     "titleLead": "Let's build something",
-    "titleTrail": "worth remembering."
+    "titleTrail": "worth remembering.",
+    "lead": "I am looking for a front-end role. Email is the fastest way to reach me, and I usually reply within a day.",
+    "copy": "Copy",
+    "copied": "Copied",
+    "cv": "Download CV",
+    "cvHref": "/cv-en.pdf",
+    "rights": "Designed and built by"
   },
   "marquee": {
     "items": ["Web interfaces", "Mobile apps", "WordPress", "WooCommerce", "Motion"]
