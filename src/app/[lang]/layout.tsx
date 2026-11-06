@@ -19,17 +19,29 @@ export async function generateStaticParams() {
 export async function generateMetadata(): Promise<Metadata> {
   const [locale, dict] = await Promise.all([getLocale(), getDictionary()]);
 
+  const title = `${siteConfig.name} — ${dict.meta.role}`;
+
   return {
     metadataBase: new URL(siteConfig.url),
-    title: {
-      default: `${siteConfig.name} — ${dict.meta.role}`,
-      template: `%s — ${siteConfig.name}`,
-    },
+    title: { default: title, template: `%s — ${siteConfig.name}` },
     description: dict.meta.description,
+    authors: [{ name: siteConfig.name, url: siteConfig.url }],
+    creator: siteConfig.name,
     alternates: {
       canonical: `/${locale}`,
-      languages: Object.fromEntries(locales.map((l) => [l, `/${l}`])),
+      languages: { ...Object.fromEntries(locales.map((l) => [l, `/${l}`])), "x-default": "/" },
     },
+    // The image itself comes from [lang]/opengraph-image.tsx; Next adds og:image and twitter:image
+    openGraph: {
+      type: "profile",
+      siteName: siteConfig.name,
+      title,
+      description: dict.meta.description,
+      url: `/${locale}`,
+      locale: locale === "vi" ? "vi_VN" : "en_US",
+      alternateLocale: locale === "vi" ? "en_US" : "vi_VN",
+    },
+    twitter: { card: "summary_large_image", title, description: dict.meta.description },
   };
 }
 
