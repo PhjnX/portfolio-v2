@@ -56,9 +56,9 @@ src/
 - [x] Selected Work (card stack)
 - [x] Marquee
 - [x] Experience
-- [ ] Tech stack + Stats
-- [ ] Credentials
-- [ ] Services + Contact
+- [x] Tech stack + Stats
+- [x] Credentials
+- [x] Services + Contact
 - [ ] Responsive / mobile motion
 - [ ] Performance + accessibility (reduced motion)
 - [ ] SEO + deploy
