@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 
-import { gsap, SplitText, useGSAP } from "@/lib/gsap";
+import { gsap, splitAria, SplitText, useGSAP, whenNear } from "@/lib/gsap";
 
 type ScrubTextProps = React.ComponentProps<"p">;
 
@@ -20,23 +20,26 @@ export function ScrubText(props: ScrubTextProps) {
       if (!el) return;
 
       const mm = gsap.matchMedia();
-      mm.add("(prefers-reduced-motion: no-preference)", () => {
-        SplitText.create(el, {
-          type: "words",
-          autoSplit: true,
-          onSplit: (self) =>
-            gsap.fromTo(
-              self.words,
-              { opacity: 0.15 },
-              {
-                opacity: 1,
-                ease: "none",
-                stagger: 0.1,
-                scrollTrigger: { trigger: el, start: "top 80%", end: "bottom 45%", scrub: true },
-              },
-            ),
-        });
-      });
+      mm.add("(prefers-reduced-motion: no-preference)", (context) =>
+        whenNear(el, context, () => {
+          SplitText.create(el, {
+            type: "words",
+            aria: splitAria(el),
+            autoSplit: true,
+            onSplit: (self) =>
+              gsap.fromTo(
+                self.words,
+                { opacity: 0.15 },
+                {
+                  opacity: 1,
+                  ease: "none",
+                  stagger: 0.1,
+                  scrollTrigger: { trigger: el, start: "top 80%", end: "bottom 45%", scrub: true },
+                },
+              ),
+          });
+        }),
+      );
     },
     { scope: ref },
   );

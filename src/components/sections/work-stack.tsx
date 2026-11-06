@@ -135,7 +135,7 @@ export function WorkStack({ copy }: WorkStackProps) {
 
             <article data-details className="space-y-6">
               <p className="font-mono text-xs tracking-[0.2em] text-ink-muted uppercase">
-                <span className="text-ink-faint">{number}</span>
+                <span className="text-ink-muted">{number}</span>
                 <span className="mx-2 text-ink-faint">·</span>
                 <span className="text-gold">{copy.kinds[project.kind]}</span>
                 <span className="mx-2 text-ink-faint">/</span>

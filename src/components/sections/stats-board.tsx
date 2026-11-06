@@ -3,7 +3,7 @@
 import { useRef } from "react";
 
 import type { Dictionary } from "@/i18n/get-dictionary";
-import { gsap, useGSAP } from "@/lib/gsap";
+import { gsap, useGSAP, whenNear } from "@/lib/gsap";
 
 type StatItem = Dictionary["stats"]["items"][number];
 
@@ -17,36 +17,41 @@ export function StatsBoard({ items }: { items: StatItem[] }) {
 
   useGSAP(
     () => {
+      const board = root.current;
+      if (!board) return;
+
       const mm = gsap.matchMedia();
-      mm.add("(prefers-reduced-motion: no-preference)", () => {
-        const tl = gsap.timeline({
-          scrollTrigger: { trigger: root.current, start: "top 75%", once: true },
-        });
+      mm.add("(prefers-reduced-motion: no-preference)", (context) =>
+        whenNear(board, context, () => {
+          const tl = gsap.timeline({
+            scrollTrigger: { trigger: board, start: "top 75%", once: true },
+          });
 
-        tl.from("[data-bar]", {
-          scaleY: 0,
-          duration: 1.4,
-          ease: "expo.out",
-          stagger: 0.15,
-        });
+          tl.from("[data-bar]", {
+            scaleY: 0,
+            duration: 1.4,
+            ease: "expo.out",
+            stagger: 0.15,
+          });
 
-        gsap.utils.toArray<HTMLElement>("[data-count]").forEach((el, i) => {
-          const target = Number(el.dataset.count);
-          const counter = { value: 0 };
-          tl.to(
-            counter,
-            {
-              value: target,
-              duration: 1.4,
-              ease: "power2.out",
-              onUpdate: () => {
-                el.textContent = String(Math.round(counter.value));
+          gsap.utils.toArray<HTMLElement>("[data-count]").forEach((el, i) => {
+            const target = Number(el.dataset.count);
+            const counter = { value: 0 };
+            tl.to(
+              counter,
+              {
+                value: target,
+                duration: 1.4,
+                ease: "power2.out",
+                onUpdate: () => {
+                  el.textContent = String(Math.round(counter.value));
+                },
               },
-            },
-            i * 0.15,
-          );
-        });
-      });
+              i * 0.15,
+            );
+          });
+        }),
+      );
     },
     { scope: root },
   );

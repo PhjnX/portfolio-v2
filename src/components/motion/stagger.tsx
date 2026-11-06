@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 
-import { gsap, useGSAP } from "@/lib/gsap";
+import { gsap, useGSAP, whenNear } from "@/lib/gsap";
 
 type StaggerProps = React.ComponentProps<"div"> & {
   /** Seconds between each item. */
@@ -18,17 +18,22 @@ export function Stagger({ each = 0.06, ...props }: StaggerProps) {
 
   useGSAP(
     () => {
+      const el = ref.current;
+      if (!el) return;
+
       const mm = gsap.matchMedia();
-      mm.add("(prefers-reduced-motion: no-preference)", () => {
-        gsap.from("[data-stagger]", {
-          y: 32,
-          opacity: 0,
-          duration: 0.9,
-          ease: "expo.out",
-          stagger: each,
-          scrollTrigger: { trigger: ref.current, start: "top 80%", once: true },
-        });
-      });
+      mm.add("(prefers-reduced-motion: no-preference)", (context) =>
+        whenNear(el, context, () => {
+          gsap.from("[data-stagger]", {
+            y: 32,
+            opacity: 0,
+            duration: 0.9,
+            ease: "expo.out",
+            stagger: each,
+            scrollTrigger: { trigger: el, start: "top 80%", once: true },
+          });
+        }),
+      );
     },
     { scope: ref },
   );

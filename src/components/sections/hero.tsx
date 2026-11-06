@@ -72,7 +72,7 @@ export function Hero({ copy, scrollLabel }: HeroProps) {
             <RevealText
               trigger="load"
               delay={0.8}
-              className="font-mono text-xs tracking-[0.2em] text-ink-faint uppercase"
+              className="font-mono text-xs tracking-[0.2em] text-ink-muted uppercase"
             >
               {scrollLabel} ↓
             </RevealText>

@@ -13,7 +13,8 @@
 
   --color-ink: #ede4d3;
   --color-ink-muted: #8c8376;
-  --color-ink-faint: #544d44;
+  /* 3.3:1 on bg: meets WCAG for large text (heading trails); small text uses ink-muted */
+  --color-ink-faint: #6b6257;
 
   --color-gold: #c9a96e;
   --color-gold-soft: #8a7550;
@@ -37,12 +38,12 @@
   --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
 
   /* Hero portrait settles in on first paint. CSS, not GSAP: it must not wait
-   * for hydration, or the server-rendered photo would flash, vanish, then fade */
+   * for hydration. Scale only, no fade: the photo is the LCP element, and Chrome
+   * only counts it once it is visible, so fading in from 0 delayed LCP by seconds */
   --animate-portrait-in: portrait-in 1.8s var(--ease-out-expo) both;
 
   @keyframes portrait-in {
     from {
-      opacity: 0;
       scale: 1.08;
     }
   }

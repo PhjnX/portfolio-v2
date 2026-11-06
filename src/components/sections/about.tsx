@@ -27,7 +27,7 @@ export function About({ copy }: AboutProps) {
         <dl className="divide-y divide-line border-y border-line md:col-span-4 md:self-end">
           {copy.facts.map((fact) => (
             <div key={fact.label} className="flex flex-col gap-1 py-4">
-              <dt className="font-mono text-xs tracking-[0.2em] text-ink-faint uppercase">
+              <dt className="font-mono text-xs tracking-[0.2em] text-ink-muted uppercase">
                 {fact.label}
               </dt>
               <dd className="text-ink">{fact.value}</dd>
