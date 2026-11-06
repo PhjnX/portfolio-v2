@@ -88,6 +88,29 @@
 }
 
 /* ------------------------------------------------------------------
+ * Accordion (Services): slide <details> open and closed.
+ * interpolate-size lets block-size animate to "auto"; browsers without
+ * ::details-content support just open instantly.
+ * ------------------------------------------------------------------ */
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    interpolate-size: allow-keywords;
+  }
+
+  details::details-content {
+    block-size: 0;
+    overflow-y: clip;
+    transition:
+      block-size 0.6s var(--ease-out-expo),
+      content-visibility 0.6s allow-discrete;
+  }
+
+  details[open]::details-content {
+    block-size: auto;
+  }
+}
+
+/* ------------------------------------------------------------------
  * Text reveal (useTextReveal)
  * ------------------------------------------------------------------ */
 
