@@ -64,7 +64,11 @@ export function ExperienceStack({ items }: { items: ExperienceItem[] }) {
           className="relative origin-top md:sticky md:top-(--stack-top)"
           style={{ "--stack-top": `${TOP_REM + STEP_REM * i}rem` } as React.CSSProperties}
         >
-          <article className="relative grid gap-8 overflow-hidden rounded-2xl border border-line bg-surface p-6 md:grid-cols-12 md:p-10">
+          {/* Phones: opens from the bottom (SectionFx); desktop piles the cards instead */}
+          <article
+            data-fx="cover"
+            className="relative grid gap-8 overflow-hidden rounded-2xl border border-line bg-surface p-6 md:grid-cols-12 md:p-10"
+          >
             <header className="space-y-3 md:col-span-5">
               <p className="font-mono text-xs tracking-[0.2em] text-ink-muted uppercase">
                 <span className="text-gold">{String(i + 1).padStart(2, "0")}</span>

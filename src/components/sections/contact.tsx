@@ -1,3 +1,4 @@
+import { FxLine } from "@/components/motion/fx-line";
 import { CopyButton } from "@/components/ui/copy-button";
 import { Section } from "@/components/ui/section";
 import { siteConfig } from "@/config/site";
@@ -41,7 +42,10 @@ export function Contact({ copy }: ContactProps) {
         <div className="flex flex-col items-start gap-6 md:flex-row md:items-center md:gap-10">
           <a href={`mailto:${siteConfig.email}`} className="group block max-w-full">
             {/* normal-case: an address should read exactly as typed, not shouted in caps */}
-            <span className="font-heading text-[clamp(1.25rem,5vw,4.75rem)] leading-tight [overflow-wrap:anywhere] text-ink normal-case transition-colors group-hover:text-gold">
+            <span
+              data-fx="scramble"
+              className="font-heading text-[clamp(1.25rem,5vw,4.75rem)] leading-tight [overflow-wrap:anywhere] text-ink normal-case transition-colors group-hover:text-gold"
+            >
               {siteConfig.email}
             </span>
             {/* Underline that draws itself in on hover */}
@@ -60,9 +64,10 @@ export function Contact({ copy }: ContactProps) {
         <div className="grid gap-12 md:grid-cols-[7fr_5fr] md:items-start md:gap-20">
           <p className="max-w-lg text-ink-muted md:text-lg">{copy.lead}</p>
 
-          <ul className="border-b border-line">
+          <ul data-fx="rows" className="border-b border-line">
             {links.map((link) => (
-              <li key={link.label} className="border-t border-line">
+              <li key={link.label} className="relative border-t border-line">
+                <FxLine />
                 <a
                   href={link.href}
                   target="_blank"
@@ -94,6 +99,7 @@ export function Contact({ copy }: ContactProps) {
       {/* Oversized signature, cut off by the bottom of the page */}
       <p
         aria-hidden
+        data-fx="rise"
         className="mt-8 -mb-[0.22em] bg-linear-to-b from-gold/30 to-transparent bg-clip-text text-center font-heading text-[min(27vw,24rem)] leading-none text-transparent select-none"
       >
         {siteConfig.shortName}

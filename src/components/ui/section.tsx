@@ -1,5 +1,6 @@
 import { RevealText } from "@/components/motion/reveal-text";
 import { ScatterText } from "@/components/motion/scatter-text";
+import { SectionFx } from "@/components/motion/section-fx";
 import { cn } from "@/lib/utils";
 
 import { Container } from "./container";
@@ -47,17 +48,20 @@ export function Section({
       className={cn("border-t border-line py-24 md:py-32", className)}
     >
       <Container className="space-y-8">
-        <SectionLabel index={index} label={copy.label} />
-        {heading === "scatter" ? (
-          <ScatterText id={headingId} className="font-heading text-display-lg">
-            {title}
-          </ScatterText>
-        ) : (
-          <RevealText as="h2" id={headingId} className="font-heading text-display-lg">
-            {title}
-          </RevealText>
-        )}
-        {children}
+        {/* Entrance effects for everything below, declared with data-fx attributes */}
+        <SectionFx>
+          <SectionLabel index={index} label={copy.label} />
+          {heading === "scatter" ? (
+            <ScatterText id={headingId} className="font-heading text-display-lg">
+              {title}
+            </ScatterText>
+          ) : (
+            <RevealText as="h2" id={headingId} className="font-heading text-display-lg">
+              {title}
+            </RevealText>
+          )}
+          {children}
+        </SectionFx>
       </Container>
     </section>
   );

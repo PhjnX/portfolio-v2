@@ -1,4 +1,5 @@
 import { RevealText } from "@/components/motion/reveal-text";
+import { FxLine } from "@/components/motion/fx-line";
 import { ScrubText } from "@/components/motion/scrub-text";
 import { Section } from "@/components/ui/section";
 import type { Dictionary } from "@/i18n/get-dictionary";
@@ -24,9 +25,13 @@ export function About({ copy }: AboutProps) {
           <RevealText className="max-w-xl text-ink-muted md:text-lg">{copy.more}</RevealText>
         </div>
 
-        <dl className="divide-y divide-line border-y border-line md:col-span-4 md:self-end">
+        <dl
+          data-fx="rows"
+          className="divide-y divide-line border-y border-line md:col-span-4 md:self-end"
+        >
           {copy.facts.map((fact) => (
-            <div key={fact.label} className="flex flex-col gap-1 py-4">
+            <div key={fact.label} className="relative flex flex-col gap-1 py-4">
+              <FxLine />
               <dt className="font-mono text-xs tracking-[0.2em] text-ink-muted uppercase">
                 {fact.label}
               </dt>

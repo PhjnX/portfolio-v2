@@ -105,6 +105,8 @@ export function WorkStack({ copy }: WorkStackProps) {
             {/* Cover: decorative, the details column carries the same info */}
             <div
               data-cover
+              // Phones: opens from the bottom as it scrolls in (SectionFx); desktop has the stack
+              data-fx="cover"
               aria-hidden
               className="relative flex aspect-16/10 w-full flex-col justify-between overflow-hidden rounded-2xl p-5 shadow-2xl ring-1 shadow-black/60 ring-white/10 md:p-7"
               style={{ backgroundColor: project.accent }}

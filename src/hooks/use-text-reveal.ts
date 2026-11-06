@@ -43,6 +43,9 @@ export function useTextReveal<T extends HTMLElement>({
             onSplit: (self) =>
               gsap.from(split === "chars" ? self.chars : self.lines, {
                 yPercent: 110,
+                // Lines swing up from a tilt; letters (hero name) only rise
+                rotation: split === "chars" ? 0 : 4,
+                transformOrigin: "0% 100%",
                 duration: split === "chars" ? 1 : 1.2,
                 ease: "expo.out",
                 stagger: split === "chars" ? 0.025 : 0.08,
