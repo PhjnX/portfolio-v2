@@ -106,10 +106,12 @@
 }
 
 /*
- * Some areas stay dark in both themes: the full-screen mobile menu, and the header
- * while that menu is open over the page. .scheme-dark re-declares the dark tokens there.
+ * Some areas stay dark in both themes: the hero (a full-bleed night scene: fading it
+ * into paper turns muddy, and framing it shrank it to a column), the full-screen mobile
+ * menu, and the header while it floats over the hero or the open menu.
+ * .scheme-dark re-declares the dark tokens there.
  */
-:root[data-theme="light"] .scheme-dark,
+:root[data-theme="light"] :is(.scheme-dark, header:not([data-scrolled="true"])),
 :root[data-theme="light"]:has([data-menu][data-open="true"]) header {
   color-scheme: dark;
   /* color is inherited as a resolved value (body's light-theme ink), not as the variable */
@@ -124,30 +126,6 @@
   --color-gold: #c9a96e;
   --color-gold-soft: #8a7550;
   --shadow-text: rgb(0 0 0 / 0.5);
-}
-
-/*
- * Light theme hero: the portrait is a night scene, and fading it into paper turns
- * muddy. It becomes a framed dark panel instead, kept clear of the header and the
- * name. Plain CSS (unlayered) so it beats the hero's responsive utilities.
- */
-:root[data-theme="light"] [data-hero-portrait] {
-  inset: 5rem 1rem auto;
-  width: auto;
-  /* Phones: end above the text block (~24rem tall at the bottom of the hero) */
-  height: max(12rem, calc(100svh - 30rem));
-  overflow: hidden;
-  border-radius: 1.5rem;
-  mask-image: none;
-}
-
-@media (width >= 48rem) {
-  :root[data-theme="light"] [data-hero-portrait] {
-    /* Bottom clears the "scroll" label; 34% clears the end of the name (it scales with vw) */
-    inset: 6rem 2.5rem 7rem auto;
-    width: 34%;
-    height: auto;
-  }
 }
 
 /* ------------------------------------------------------------------
