@@ -1,12 +1,8 @@
 @import "tailwindcss";
 
-/* light:… applies under <html data-theme="light"> (see the light theme below) */
-@custom-variant light (&:where([data-theme="light"], [data-theme="light"] *));
-
 /* ------------------------------------------------------------------
  * Design tokens
  * Dark, warm palette. Cream ink on near-black, gold as the only accent.
- * A light theme (warm paper) overrides the same tokens below.
  * ember/violet stay in the palette (styleguide) but no section uses them.
  * ------------------------------------------------------------------ */
 @theme {
@@ -76,89 +72,9 @@
   -webkit-text-stroke: 1px var(--color-ink-muted);
 }
 
-/* ------------------------------------------------------------------
- * Light theme: warm paper. Same token names, so every utility follows.
- * Set on <html data-theme> by an inline script before first paint (layout.tsx),
- * then by ThemeToggle. Contrast on bg: ink 15:1, muted 5.7:1, gold 5:1,
- * faint 3.6:1 (large headings only).
- * ------------------------------------------------------------------ */
-:root {
-  /* Shadows that sit on the page colour: deep on dark, soft and warm on paper */
-  --shadow-sheet: rgb(0 0 0 / 0.6);
-  --shadow-text: rgb(0 0 0 / 0.5);
-}
-
-:root[data-theme="light"] {
-  --color-bg: #f4eee3;
-  --color-surface: #ebe3d5;
-  --color-surface-2: #e2d8c7;
-  --color-line: #d6cab6;
-
-  --color-ink: #1b1713;
-  --color-ink-muted: #665c50;
-  --color-ink-faint: #857a6b;
-
-  --color-gold: #7f6128;
-  --color-gold-soft: #9a7f52;
-
-  --shadow-sheet: rgb(70 50 20 / 0.16);
-  --shadow-text: transparent;
-}
-
-/*
- * Some areas stay dark in both themes: the hero (a full-bleed night scene: fading it
- * into paper turns muddy, and framing it shrank it to a column), the full-screen mobile
- * menu, and the header while it floats over the hero or the open menu.
- * .scheme-dark re-declares the dark tokens there.
- */
-:root[data-theme="light"] :is(.scheme-dark, header:not([data-scrolled="true"])),
-:root[data-theme="light"]:has([data-menu][data-open="true"]) header {
-  color-scheme: dark;
-  /* color is inherited as a resolved value (body's light-theme ink), not as the variable */
-  color: var(--color-ink);
-  --color-bg: #0b0a09;
-  --color-surface: #15120f;
-  --color-surface-2: #1e1a16;
-  --color-line: #2b2620;
-  --color-ink: #ede4d3;
-  --color-ink-muted: #8c8376;
-  --color-ink-faint: #6b6257;
-  --color-gold: #c9a96e;
-  --color-gold-soft: #8a7550;
-  --shadow-text: rgb(0 0 0 / 0.5);
-}
-
-/* ------------------------------------------------------------------
- * Theme switch: the new theme grows as a circle from the toggle.
- * ThemeToggle wraps the change in document.startViewTransition and sets
- * --reveal-x/--reveal-y/--reveal-r; the snapshot of the new page is clipped.
- * ------------------------------------------------------------------ */
-::view-transition-old(root),
-::view-transition-new(root) {
-  animation: none;
-  mix-blend-mode: normal;
-}
-
-::view-transition-new(root) {
-  animation: theme-reveal 0.7s var(--ease-in-out-quart);
-}
-
-@keyframes theme-reveal {
-  from {
-    clip-path: circle(0 at var(--reveal-x, 50%) var(--reveal-y, 0));
-  }
-  to {
-    clip-path: circle(var(--reveal-r, 150vmax) at var(--reveal-x, 50%) var(--reveal-y, 0));
-  }
-}
-
 @layer base {
   html {
     color-scheme: dark;
-  }
-
-  html[data-theme="light"] {
-    color-scheme: light;
   }
 
   body {

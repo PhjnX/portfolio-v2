@@ -9,8 +9,6 @@
     "menu": "Menu",
     "close": "Close",
     "skip": "Skip to content",
-    "toLight": "Switch to light theme",
-    "toDark": "Switch to dark theme",
     "scrollToExplore": "Scroll to explore"
   },
   "nav": {

@@ -94,12 +94,10 @@ export function MobileMenu({ items, labels }: MobileMenuProps) {
         createPortal(
           <div
             id={panelId}
-            data-menu
             data-open={open}
             // Closed: invisible removes it from the tab order and the accessibility tree
             className={cn(
-              // scheme-dark: the menu stays dark in the light theme, like the hero (globals.css)
-              "group/menu fixed inset-0 z-40 flex flex-col bg-bg px-4 pt-24 pb-8 scheme-dark md:hidden",
+              "group/menu fixed inset-0 z-40 flex flex-col bg-bg px-4 pt-24 pb-8 md:hidden",
               "invisible transition-[clip-path,visibility] duration-700 ease-out-expo [clip-path:inset(0_0_100%_0)]",
               // Opening flips visibility at once (so focus can land); closing keeps it until the clip ends
               "data-[open=true]:visible data-[open=true]:transition-[clip-path] data-[open=true]:[clip-path:inset(0)]",

@@ -72,5 +72,4 @@ src/
 
 - **Motion is progressive.** Every section is readable without JS, and `prefers-reduced-motion` turns off Lenis, reveals, pins and the marquee.
 - **Scroll animations set up lazily** (`whenNear`, lazy `useTextReveal`): creating them all at hydration forced a layout per element. Pinned sections stay eager because their spacing must exist before anything below is measured.
-- **Light / dark theme.** Same token names re-declared under `html[data-theme="light"]`; an inline script in `<head>` applies a saved choice before first paint. The switch grows the new theme as a circle from the toggle (View Transitions API), instant without support or with reduced motion.
 - **Lighthouse** (production build, mobile with devtools throttling): accessibility, best practices and SEO 100; performance ~80 with LCP ~2.8s and TBT ~0.4s. Desktop performance 99.

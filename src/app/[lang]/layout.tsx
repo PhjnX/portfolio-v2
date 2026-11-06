@@ -7,7 +7,6 @@ import { siteConfig } from "@/config/site";
 import { locales } from "@/i18n/config";
 import { getDictionary, getLocale } from "@/i18n/get-dictionary";
 import { archivo, beVietnam, jetbrains } from "@/lib/fonts";
-import { THEME_COLOR, THEME_KEY } from "@/lib/theme";
 import { cn } from "@/lib/utils";
 
 import "../globals.css";
@@ -47,32 +46,20 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export const viewport: Viewport = {
-  // Dark by default; ThemeToggle rewrites this tag when the light theme is on
-  themeColor: THEME_COLOR.dark,
+  themeColor: "#0b0a09",
 };
-
-/*
- * Runs while <head> is parsed, before the body is painted, so a saved light theme
- * never flashes dark first. Dark is the default: it is the designed look.
- * Plain inline <script>, not next/script: beforeInteractive does not block the first paint.
- */
-const themeScript = `try{if(localStorage.getItem("${THEME_KEY}")==="light")document.documentElement.dataset.theme="light"}catch(e){}`;
 
 export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
   const [locale, dict] = await Promise.all([getLocale(), getDictionary()]);
 
   return (
-    // suppressHydrationWarning: the theme script sets data-theme on <html>, and browser
-    // extensions inject attributes into <html>/<body>, before React hydrates.
-    // Only silences these two tags.
+    // suppressHydrationWarning: browser extensions (custom cursor, ColorZilla...) inject
+    // attributes into <html>/<body> before React hydrates. Only silences these two tags.
     <html
       lang={locale}
       suppressHydrationWarning
       className={cn(archivo.variable, beVietnam.variable, jetbrains.variable, "h-full")}
     >
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
-      </head>
       <body className="min-h-full" suppressHydrationWarning>
         {/* Text reveals hide [data-reveal] until JS splits it; without JS, show it as is */}
         <noscript>

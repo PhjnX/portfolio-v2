@@ -23,11 +23,7 @@ export function Hero({ copy, scrollLabel }: HeroProps) {
   const last = rest.pop();
 
   return (
-    // scheme-dark: the hero stays dark in the light theme too; About slides over it as a light sheet
-    <section
-      id="top"
-      className="sticky top-0 isolate h-svh min-h-[36rem] overflow-hidden bg-bg scheme-dark"
-    >
+    <section id="top" className="sticky top-0 isolate h-svh min-h-[36rem] overflow-hidden">
       <HeroMotion>
         {/* Illustrated portrait, faded into the page at the bottom (and left on desktop).
             Its own dark backdrop and warm light already match the palette: no filters. */}
@@ -63,7 +59,7 @@ export function Hero({ copy, scrollLabel }: HeroProps) {
             as="h1"
             split="chars"
             trigger="load"
-            className="font-heading text-display-xl drop-shadow-[0_4px_24px_var(--shadow-text)]"
+            className="font-heading text-display-xl drop-shadow-[0_4px_24px_rgb(0_0_0/0.5)]"
           >
             {first} {rest.join(" ")}
             <br />
