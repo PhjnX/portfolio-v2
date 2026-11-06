@@ -2,10 +2,11 @@ import Image from "next/image";
 
 import { RevealText } from "@/components/motion/reveal-text";
 import { Container } from "@/components/ui/container";
-import portrait from "@/assets/hero/portrait.jpg";
+import poster from "@/assets/hero/greet-poster.jpg";
 import { siteConfig } from "@/config/site";
 import type { Dictionary } from "@/i18n/get-dictionary";
 
+import { HeroGreeting } from "./hero-greeting";
 import { HeroMotion } from "./hero-motion";
 
 type HeroProps = {
@@ -25,30 +26,26 @@ export function Hero({ copy, scrollLabel }: HeroProps) {
     <section id="top" className="sticky top-0 isolate h-svh min-h-[36rem] overflow-hidden">
       <HeroMotion>
         {/* Illustrated portrait, faded into the page at the bottom (and left on desktop).
-            Its own dark backdrop and gold rim light already match the palette: no filters. */}
+            Its own dark backdrop and warm light already match the palette: no filters. */}
         <div
           data-hero-portrait
-          className="absolute inset-x-0 top-0 -z-10 h-[80%] [mask-image:linear-gradient(to_top,transparent_0%,black_50%)] motion-safe:animate-portrait-in md:inset-y-0 md:right-0 md:left-auto md:h-full md:w-[62%] md:[mask-image:linear-gradient(to_top,transparent_0%,black_35%),linear-gradient(to_right,transparent_0%,black_40%)] md:[mask-composite:intersect]"
+          className="absolute inset-x-0 top-0 -z-10 h-[80%] [mask-image:linear-gradient(to_bottom,transparent_0%,black_14%,black_50%,transparent_100%)] motion-safe:animate-portrait-in md:inset-y-0 md:right-0 md:left-auto md:h-full md:w-[62%] md:[mask-image:linear-gradient(to_top,transparent_0%,black_35%),linear-gradient(to_right,transparent_0%,black_40%)] md:[mask-composite:intersect]"
         >
-          {/* Idle layer (breathing, mouse parallax). Oversized so shifting it never shows an edge */}
+          {/* Mouse-parallax layer. Oversized so shifting it never shows an edge */}
           <div data-portrait-float className="absolute -inset-[3%]">
+            {/* The greeting clip's first frame: shown at once (LCP), and what the clip starts and ends on */}
             <Image
-              src={portrait}
+              src={poster}
               alt={siteConfig.name}
               fill
               placeholder="blur"
               loading="eager"
               fetchPriority="high"
               sizes="(min-width: 768px) 62vw, 100vw"
-              className="object-cover object-[60%_30%] md:object-[50%_30%]"
+              className="object-cover object-[57%_30%] md:object-[55%_35%]"
             />
+            <HeroGreeting src="/hero/greet.mp4" />
           </div>
-          {/* Rim light behind the shoulder, pulsing slowly like a lamp */}
-          <div
-            data-portrait-glow
-            aria-hidden
-            className="absolute inset-0 bg-[radial-gradient(40%_35%_at_92%_42%,color-mix(in_oklab,var(--color-gold)_45%,transparent),transparent)] opacity-60 mix-blend-screen"
-          />
         </div>
 
         <Container className="relative w-full space-y-8">

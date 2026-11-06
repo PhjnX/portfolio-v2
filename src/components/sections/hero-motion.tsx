@@ -5,8 +5,7 @@ import { useRef } from "react";
 import { gsap, useGSAP } from "@/lib/gsap";
 
 /**
- * Everything that moves in the hero besides the text reveals:
- * - idle: the portrait breathes and its rim light pulses, so the still illustration feels alive
+ * Hero motion besides the text reveals and the greeting clip (HeroGreeting):
  * - mouse (desktop): the portrait leans gently towards the pointer for depth
  * - scroll: as About slides over the sticky hero, the hero shrinks and dims
  *   while the portrait drifts slower than the text (parallax)
@@ -23,21 +22,6 @@ export function HeroMotion({ children }: { children: React.ReactNode }) {
       const mm = gsap.matchMedia();
 
       mm.add("(prefers-reduced-motion: no-preference)", () => {
-        // Breathing: a slow, barely-there swell, anchored at the chest so the head rises
-        gsap.to("[data-portrait-float]", {
-          scale: 1.02,
-          transformOrigin: "50% 80%",
-          duration: 4,
-          ease: "sine.inOut",
-          yoyo: true,
-          repeat: -1,
-        });
-        gsap.fromTo(
-          "[data-portrait-glow]",
-          { opacity: 0.35 },
-          { opacity: 0.8, duration: 3.2, ease: "sine.inOut", yoyo: true, repeat: -1 },
-        );
-
         const tl = gsap.timeline({
           defaults: { ease: "none" },
           scrollTrigger: {
