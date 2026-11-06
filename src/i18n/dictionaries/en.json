@@ -6,6 +6,8 @@
   "common": {
     "language": "Language",
     "mainNav": "Main navigation",
+    "menu": "Menu",
+    "close": "Close",
     "scrollToExplore": "Scroll to explore"
   },
   "nav": {

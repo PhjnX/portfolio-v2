@@ -6,6 +6,8 @@
   "common": {
     "language": "Ngôn ngữ",
     "mainNav": "Điều hướng chính",
+    "menu": "Menu",
+    "close": "Đóng",
     "scrollToExplore": "Cuộn để khám phá"
   },
   "nav": {
