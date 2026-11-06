@@ -9,7 +9,13 @@ type AboutProps = {
 
 export function About({ copy }: AboutProps) {
   return (
-    <Section id="about" index="01" copy={copy}>
+    // Opaque, rounded and above the sticky hero: this is the sheet that slides over it
+    <Section
+      id="about"
+      index="01"
+      copy={copy}
+      className="relative z-10 rounded-t-[2rem] bg-bg shadow-[0_-30px_60px_rgb(0_0_0/0.6)] md:rounded-t-[3rem]"
+    >
       <div className="grid gap-12 pt-8 md:grid-cols-12 md:gap-10 md:pt-16">
         <div className="space-y-8 md:col-span-8">
           <ScrubText className="text-2xl leading-snug font-medium text-ink md:text-4xl md:leading-tight">

@@ -15,8 +15,11 @@ export default async function HomePage() {
 
   return (
     <main>
-      <Hero copy={dict.hero} scrollLabel={dict.common.scrollToExplore} />
-      <About copy={dict.about} />
+      {/* The hero sticks inside this wrapper only, so it un-pins once About has covered it */}
+      <div>
+        <Hero copy={dict.hero} scrollLabel={dict.common.scrollToExplore} />
+        <About copy={dict.about} />
+      </div>
       <Marquee copy={dict.marquee} />
       <Work copy={dict.work} />
       <Experience copy={dict.experience} />

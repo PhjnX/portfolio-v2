@@ -35,6 +35,17 @@
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+
+  /* Hero portrait settles in on first paint. CSS, not GSAP: it must not wait
+   * for hydration, or the server-rendered photo would flash, vanish, then fade */
+  --animate-portrait-in: portrait-in 1.8s var(--ease-out-expo) both;
+
+  @keyframes portrait-in {
+    from {
+      opacity: 0;
+      scale: 1.08;
+    }
+  }
 }
 
 /* Font vars come from next/font on <html>, so resolve them inline */
