@@ -34,14 +34,18 @@ Open http://localhost:3000.
 
 ```
 src/
-  app/[lang]/     routes + root layout (one per locale)
-  app/            global styles + tokens
+  app/[lang]/     routes, root layout and OG image (one per locale)
+  app/            global styles + tokens, icon, robots, sitemap
+  assets/         images (hero, project covers) and OG font subsets
   components/
+    layout/       header, mobile menu, skip link
+    motion/       text reveals, scrub/scatter text, stagger
     ui/           small reusable primitives (Container, SectionLabel...)
     sections/     page sections (Hero, About, Work...)
   config/         site-wide config (name, links)
   i18n/           locales, dictionaries (vi.json is the source of truth)
-  lib/            helpers (cn, fonts)
+  hooks/          useTextReveal
+  lib/            helpers (cn, fonts, gsap setup + lazy scroll helpers)
   proxy.ts        redirects / to /vi or /en (cookie > Accept-Language)
 ```
 
@@ -59,6 +63,13 @@ src/
 - [x] Tech stack + Stats
 - [x] Credentials
 - [x] Services + Contact
-- [ ] Responsive / mobile motion
-- [ ] Performance + accessibility (reduced motion)
-- [ ] SEO + deploy
+- [x] Hero portrait + mobile menu
+- [x] Performance + accessibility (reduced motion)
+- [x] SEO (Open Graph image, sitemap, robots, JSON-LD)
+- [ ] Deploy
+
+## Notes
+
+- **Motion is progressive.** Every section is readable without JS, and `prefers-reduced-motion` turns off Lenis, reveals, pins and the marquee.
+- **Scroll animations set up lazily** (`whenNear`, lazy `useTextReveal`): creating them all at hydration forced a layout per element. Pinned sections stay eager because their spacing must exist before anything below is measured.
+- **Lighthouse** (production build, mobile with devtools throttling): accessibility, best practices and SEO 100; performance ~80 with LCP ~2.8s and TBT ~0.4s. Desktop performance 99.
