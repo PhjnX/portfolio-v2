@@ -67,7 +67,17 @@ export function SectionFx({ children }: { children: React.ReactNode }) {
   );
 }
 
-const once = (trigger: Element, start = "top 85%") => ({ trigger, start, once: true });
+/*
+ * Play once, without `once: true`: a once-trigger already scrolled past kills itself
+ * during the refresh that creating a new trigger runs, which shrinks ScrollTrigger's
+ * list mid-loop ("Cannot read properties of undefined (reading 'end')"). Our triggers
+ * are created lazily, so that happened. toggleActions plays once and never reverses.
+ */
+const once = (trigger: Element, start = "top 85%") => ({
+  trigger,
+  start,
+  toggleActions: "play none none none",
+});
 
 function scramble(el: HTMLElement) {
   // Mid-decode the string is shorter than the real one; hold the final width so

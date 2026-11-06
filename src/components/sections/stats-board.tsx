@@ -24,7 +24,12 @@ export function StatsBoard({ items }: { items: StatItem[] }) {
       mm.add("(prefers-reduced-motion: no-preference)", (context) =>
         whenNear(board, context, () => {
           const tl = gsap.timeline({
-            scrollTrigger: { trigger: board, start: "top 75%", once: true },
+            // Not once: true, see the note in section-fx.tsx
+            scrollTrigger: {
+              trigger: board,
+              start: "top 75%",
+              toggleActions: "play none none none",
+            },
           });
 
           tl.from("[data-bar]", {
