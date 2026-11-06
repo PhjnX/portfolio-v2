@@ -150,6 +150,13 @@ function rise(el: HTMLElement) {
   gsap.from(el, {
     yPercent: 45,
     ease: "none",
-    scrollTrigger: { trigger: el, start: "top bottom", end: "bottom bottom", scrub: true },
+    scrollTrigger: {
+      // Measure the parent: the element itself is already pushed down by the from-state,
+      // so its own "bottom bottom" would sit past the end of the page and never be reached
+      trigger: el.parentElement ?? el,
+      start: "bottom bottom+=50%",
+      end: "bottom bottom",
+      scrub: true,
+    },
   });
 }

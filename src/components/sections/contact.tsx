@@ -96,11 +96,12 @@ export function Contact({ copy }: ContactProps) {
         </footer>
       </div>
 
-      {/* Oversized signature, cut off by the bottom of the page */}
+      {/* Oversized signature closing the page. Shown whole: cropping it at the page edge
+          cut the hook off the J, which then read as an I ("PH IN") */}
       <p
         aria-hidden
         data-fx="rise"
-        className="mt-8 -mb-[0.22em] bg-linear-to-b from-gold/30 to-transparent bg-clip-text text-center font-heading text-[min(27vw,24rem)] leading-none text-transparent select-none"
+        className="mt-12 bg-linear-to-b from-gold/35 to-gold/10 bg-clip-text pb-6 text-center font-heading text-[min(26vw,23rem)] leading-[0.8] text-transparent select-none md:pb-10"
       >
         {siteConfig.shortName}
       </p>
